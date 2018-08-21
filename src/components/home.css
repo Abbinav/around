@@ -1,0 +1,51 @@
+.form-inline{
+      padding-top: 20px;
+      margin-left: 40%;
+      
+}
+.mr-sm-2  {
+    
+    border-radius: 30px !important;
+}
+.my-sm-0{
+  border-radius:30px !important;
+}
+
+.col-md-2{
+  margin-top: 100px;
+  color: black;
+
+}
+
+.title {
+  margin-left: 43%;
+  padding-top: 50px;
+  color: red !important;
+}
+
+.expand {
+  /*erase the 'height' and 'overflow' rules*/
+  display: none;
+  
+  
+}
+
+.sub{
+   display: flex;
+  max-width: 225px;
+      justify-content:space-between;
+
+}
+
+#toggle:checked ~.expand {
+  display: inline-flex !important;
+  margin-top: 10px;
+}
+
+#toggle{
+  display: none !important;
+  visibility: collapse !important;
+}
+
+
+

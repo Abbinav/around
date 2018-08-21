@@ -4,10 +4,7 @@
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 100px;
-}
+
 
 .logo_img {
   height: 50px;
@@ -38,30 +35,7 @@
   background-color: #FFAAAA !important; 
   
 }
-.form-inline{
-      padding-top: 20px;
-      margin-left: 40%;
-      
-}
-.mr-sm-2  {
-    
-    border-radius: 30px !important;
-}
-.my-sm-0{
-  border-radius:30px !important;
-}
 
-.col-md-2{
-  margin-top: 100px;
-  color: black;
-
-}
-
-.title {
-  margin-left: 43%;
-  padding-top: 50px;
-  color: red !important;
-}
 
 .navbar.center .navbar-inner {
     text-align: center;
