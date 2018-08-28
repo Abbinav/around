@@ -33,13 +33,21 @@
 .sub{
    display: flex;
   max-width: 225px;
-      justify-content:space-between;
+  justify-content:space-between;
 
 }
 
-#toggle:checked ~.expand {
+.Collapsible__contentOuter{
+      width: 100% !important;
+
+          
+
+
+}
+
+.flex-container {
   display: inline-flex !important;
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
 #toggle{
@@ -47,5 +55,7 @@
   visibility: collapse !important;
 }
 
-
+/*.transportation-collapsible{*/
+/*  background-color: #ffff00 !important;*/
+/*}*/
 

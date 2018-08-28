@@ -5,7 +5,7 @@ import ResultScreen from "./results";
 
 export default () =>
   <Switch>
-    <Route path="/" exact component={Home} />
+    <Route path="/" exact component={Home, Home} />
     //every path matches "/", so we must use "exact" keyword
     <Route path="/results" component={ResultScreen} />
   </Switch>;
