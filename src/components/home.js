@@ -6,6 +6,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'font-awesome/css/font-awesome.min.css';
 import './home.css';
 
+//import {transportationClickHandler} from './handlerFunctions/homeHandlers';
+//^did not work
 const bikeAddress = 'https://i.imgur.com/JZiBW2z.png';
 const bookAddress = 'https://i.imgur.com/qOq3DU2.png';
 const houseAddress = 'https://i.imgur.com/mfSjM30.png';
@@ -15,41 +17,94 @@ const entertainmentAddress = 'https://i.imgur.com/AnNzjzz.png';
 
 
 class Home extends React.Component{
+  state = {
+    transportationShow : false,
+    booksShow : false,
+    housingShow : false,
+    electronicsShow : false,
+    clothingShow : false,
+    entertainmentShow : false
+  }
+   transportationClickHandler = () => {
+    const displayBool = !this.state.transportationShow;
+    this.setState({
+      transportationShow : displayBool,
+      booksShow : false,    housingShow : false,    electronicsShow : false,    clothingShow : false,    entertainmentShow : false
+    });
+  }
+   bookClickHandler = () => {
+    const displayBool = !this.state.booksShow;
+    this.setState({
+      booksShow : displayBool,
+      transportationShow : false,    housingShow : false,    electronicsShow : false,    clothingShow : false,    entertainmentShow : false
+    });
+  }
+  dropdownHandler = (boolToChange) => {
+    let curState = {
+    transportationShow : false,
+    booksShow : false,
+    housingShow : false,
+    electronicsShow : false,
+    clothingShow : false,
+    entertainmentShow : false
+  };
+    curState[boolToChange] = !this.state[boolToChange];
+    this.setState(curState);
+    
+  }
+  
+  
    render(){
+     let transportationDropdown = null;
+     let bookDropdown = null;
+     if(this.state.transportationShow){
+       transportationDropdown = (
+         <div className = "flex-container fluid">
+            <img src="https://i.imgur.com/nVM93E6.png" alt="bike logo" className="bike_img transportation-collapsible" ></img>
+            <figcaption className="transportation-collapsible">Bikes</figcaption>
+            <img src="https://i.imgur.com/G2vjNLK.png"  className= "car_img transportation-collapsible" ></img>
+            <figcaption className="transportation-collapsible">Cars</figcaption>
+            <img src="https://i.imgur.com/E6sKyF0.png" className = "ride_img transportation-collapsible"></img>
+            <figcaption className="transportation-collapsible">Ride Sharing</figcaption>
+          </div>
+       );
+     }
+    if(this.state.booksShow){
+        bookDropdown = (
+          <div>
+            <img src= "https://i.imgur.com/F2gJ6oo.jpg" className= "book_img"alt="book logo" ></img>
+          </div>
+        );
+    }
+     
+     
       return(
          <div>
          <h1 className= "title"> around <img src= "https://i.imgur.com/XAimBaG.png" className="logo_img" alt='around logo'></img> </h1>
     <div className="App">
       <form className="form-inline my-2 my-lg-0">
         <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"></input>
+        <Link to="/results">
         <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </Link>
       </form>
     
       <div className="container-fluid">
         <div className="row">
           <div className="col-md-2">
-            <Collapsible trigger={<div> <img height="200px" src={bikeAddress}/> <figcaption>Transportation</figcaption>  </div>}>
-            
-                <div class = "flex-container fluid">
-                  <img src="https://i.imgur.com/nVM93E6.png" alt="bike logo" className="bike_img transportation-collapsible" ></img>
-                  <figcaption className="transportation-collapsible">Bikes</figcaption>
-                  <img src="https://i.imgur.com/G2vjNLK.png"  className= "car_img transportation-collapsible" ></img>
-                  <figcaption className="transportation-collapsible">Cars</figcaption>
-                  <img src="https://i.imgur.com/E6sKyF0.png" className = "ride_img transportation-collapsible"></img>
-                  <figcaption className="transportation-collapsible">Ride Sharing</figcaption>
-                </div>
-            </Collapsible>
-            
+            <div onClick={this.dropdownHandler.bind(this, "transportationShow")}> <img height="200px" src={bikeAddress}/> <figcaption>Transportation</figcaption>  </div>
+            {transportationDropdown}
+          </div>
+          
+          <div className="col-md-2">
+            <div onClick={this.dropdownHandler.bind(this, "booksShow")}> <img height="200px" src={bookAddress}/> <figcaption>Books</figcaption>  </div>
+            {bookDropdown}
           </div>
           <div className="col-md-2">
-          <Collapsible trigger={<div> <img height="200px" src={bookAddress}/> <figcaption>Books</figcaption>  </div>}>
-            <img src= "https://i.imgur.com/G2vjNLK.png" className= "book_img"alt="book logo" ></img>
-            
-            </Collapsible>
-          </div>
-          <div className="col-md-2">
-            <img src= "https://i.imgur.com/mfSjM30.png" height = "200px" alt="house logo" className= "house_img"></img>
-            <figcaption>Housing</figcaption>
+            <div onClick={this.dropdownHandler.bind(this, "housingShow")}>
+              <img src= "https://i.imgur.com/mfSjM30.png" height = "200px" alt="house logo" className= "house_img"></img>
+              <figcaption>Housing</figcaption>
+            </div>
           </div>
           <div className="col-md-2">
             <img src= "https://i.imgur.com/GWhz6Ym.png" height = "200px" alt="phone logo" className= "electronic_img"></img>

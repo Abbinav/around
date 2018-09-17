@@ -1,0 +1,21 @@
+.card-custom {
+   width: 16rem;
+   margin: 10px auto;
+   display: inline-block;
+}
+.card-bottom-custom {
+   display: inline-block;
+}
+
+.inline-item {
+   display: inline;
+   margin: 5px; 
+}
+/* says the margin is invalid but it actually works, dont remove!!!*/
+.card-button {
+   background-color: #ff8080;
+}
+
+.img-custom {
+   background-color: gray;
+}

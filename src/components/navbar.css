@@ -1,8 +1,7 @@
 /*  we need to use !important for now because the bootstrap css file uses !important
    eventually we will figure out how to edit the bootstrap css but for now this is a shitty/sufficient alternative
-/*
-/*
-.navbar {
-   background-color: black !important;
-}
 */
+
+.navbar-custom {
+   background-color: #ff8080 !important;
+}
