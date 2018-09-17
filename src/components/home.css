@@ -1,5 +1,7 @@
-.img-custom {
-  width: 75%;
+.img-dropdown {
+  
+  height: 150px;
+  max-width: 250px;
 }
 
 .form-inline{
@@ -8,7 +10,6 @@
       
 }
 .mr-sm-2  {
-    
     border-radius: 30px !important;
 }
 .my-sm-0{
@@ -43,10 +44,6 @@
 
 .Collapsible__contentOuter{
       width: 100% !important;
-
-          
-
-
 }
 
 .flex-container {

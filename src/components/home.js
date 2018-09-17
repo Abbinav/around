@@ -25,20 +25,6 @@ class Home extends React.Component{
     clothingShow : false,
     entertainmentShow : false
   }
-   transportationClickHandler = () => {
-    const displayBool = !this.state.transportationShow;
-    this.setState({
-      transportationShow : displayBool,
-      booksShow : false,    housingShow : false,    electronicsShow : false,    clothingShow : false,    entertainmentShow : false
-    });
-  }
-   bookClickHandler = () => {
-    const displayBool = !this.state.booksShow;
-    this.setState({
-      booksShow : displayBool,
-      transportationShow : false,    housingShow : false,    electronicsShow : false,    clothingShow : false,    entertainmentShow : false
-    });
-  }
   dropdownHandler = (boolToChange) => {
     let curState = {
     transportationShow : false,
@@ -47,37 +33,75 @@ class Home extends React.Component{
     electronicsShow : false,
     clothingShow : false,
     entertainmentShow : false
-  };
+    };
     curState[boolToChange] = !this.state[boolToChange];
     this.setState(curState);
-    
   }
   
   
    render(){
      let transportationDropdown = null;
      let bookDropdown = null;
+     let housingDropdown = null;
+     let electronicsDropdown = null;
+     let clothingDropdown = null;
+     let entertainmentDropdown= null;
      if(this.state.transportationShow){
        transportationDropdown = (
-         <div className = "flex-container fluid">
-            <img src="https://i.imgur.com/nVM93E6.png" alt="bike logo" className="bike_img transportation-collapsible" ></img>
+        <div className = "flex-container fluid bg-warning">
+          <div>
+            <img src="https://i.imgur.com/nVM93E6.png" alt="bike logo" className="img-dropdown" ></img>
             <figcaption className="transportation-collapsible">Bikes</figcaption>
-            <img src="https://i.imgur.com/G2vjNLK.png"  className= "car_img transportation-collapsible" ></img>
+          </div>
+          <div>
+            <img src="https://i.imgur.com/G2vjNLK.png"  className= "img-dropdown" ></img>
             <figcaption className="transportation-collapsible">Cars</figcaption>
-            <img src="https://i.imgur.com/E6sKyF0.png" className = "ride_img transportation-collapsible"></img>
+          </div>
+          <div>
+            <img src="https://i.imgur.com/E6sKyF0.png" className = "img-dropdown"></img>
             <figcaption className="transportation-collapsible">Ride Sharing</figcaption>
           </div>
+        </div>
        );
      }
+     
     if(this.state.booksShow){
         bookDropdown = (
-          <div>
-            <img src= "https://i.imgur.com/F2gJ6oo.jpg" className= "book_img"alt="book logo" ></img>
+          <div className = "flex-container fluid bg-primary">
+            <img src= "https://i.imgur.com/cT2uSsC.jpg" className= "img-dropdown" alt="book logo" ></img>
           </div>
         );
     }
      
-     
+    if(this.state.housingShow){
+        housingDropdown = (
+          <div className = "flex-container fluid bg-primary">
+            <img src= "https://i.imgur.com/cT2uSsC.jpg" className= "img-dropdown" alt="book logo" ></img>
+          </div>
+        );
+    }
+    if(this.state.electronicsShow){
+        electronicsDropdown = (
+          <div className = "flex-container fluid bg-primary">
+            <img src= "https://i.imgur.com/cT2uSsC.jpg" className= "img-dropdown" alt="book logo" ></img>
+          </div>
+        );
+    }
+    if(this.state.clothingShow){
+        clothingDropdown = (
+          <div className = "flex-container fluid bg-primary">
+            <img src= "https://i.imgur.com/cT2uSsC.jpg" className= "img-dropdown" alt="book logo" ></img>
+          </div>
+        );
+    }
+    
+    if(this.state.entertainmentShow){
+        entertainmentDropdown = (
+          <div className = "flex-container fluid bg-primary">
+            <img src= "https://i.imgur.com/cT2uSsC.jpg" className= "img-dropdown" alt="book logo" ></img>
+          </div>
+        );
+    }
       return(
          <div>
          <h1 className= "title"> around <img src= "https://i.imgur.com/XAimBaG.png" className="logo_img" alt='around logo'></img> </h1>
@@ -100,24 +124,27 @@ class Home extends React.Component{
             <div onClick={this.dropdownHandler.bind(this, "booksShow")}> <img height="200px" src={bookAddress}/> <figcaption>Books</figcaption>  </div>
             {bookDropdown}
           </div>
+          
           <div className="col-md-2">
-            <div onClick={this.dropdownHandler.bind(this, "housingShow")}>
-              <img src= "https://i.imgur.com/mfSjM30.png" height = "200px" alt="house logo" className= "house_img"></img>
-              <figcaption>Housing</figcaption>
-            </div>
+            <div onClick={this.dropdownHandler.bind(this, "housingShow")}> <img height="200px" src={houseAddress}/> <figcaption>Housing</figcaption>  </div>
+            {housingDropdown}
           </div>
+          
           <div className="col-md-2">
-            <img src= "https://i.imgur.com/GWhz6Ym.png" height = "200px" alt="phone logo" className= "electronic_img"></img>
-            <figcaption>Electronics</figcaption>
+            <div onClick={this.dropdownHandler.bind(this, "electronicsShow")}> <img height="200px" src={electronicAddress}/> <figcaption>Electronics</figcaption>  </div>
+            {electronicsDropdown}
           </div>
+          
           <div className="col-md-2 ">
-            <img src= "https://i.imgur.com/o8I9IHw.png" height = "200px" alt="clothing logo" className= "clothing_img"></img>
-            <figcaption>Clothing</figcaption>
+            <div onClick={this.dropdownHandler.bind(this, "clothingShow")}> <img height="200px" src={clothingAddress}/> <figcaption>Clothing</figcaption>  </div>
+              {clothingDropdown}
           </div>
+          
           <div className="col-md-2">
-            <img src= "https://i.imgur.com/AnNzjzz.png" height = "200px" alt="movie ticket logo" className= "entertainment_img"></img>
-            <figcaption>Entertainment</figcaption>
+            <div onClick={this.dropdownHandler.bind(this, "entertainmentShow")}> <img height="200px" src={entertainmentAddress}/> <figcaption>Entertainment</figcaption>  </div>
+              {entertainmentDropdown}
           </div>
+          
         </div>
       </div> 
     </div> 

@@ -1,3 +1,6 @@
+//
+//  THIS IS home.js BEFORE THE HOME-MADE COLLAPSIBLE WAS IMPLEMENTED
+//
 import React from 'react';
 import Collapsible from 'react-collapsible';
 import { Link } from 'react-router-dom';
