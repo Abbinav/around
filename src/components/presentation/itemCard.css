@@ -2,7 +2,9 @@
    width: 16rem;
    margin: 10px auto;
    display: inline-block;
+   border-radius: 25px !important;
 }
+
 .card-bottom-custom {
    display: inline-block;
 }
@@ -16,6 +18,13 @@
    background-color: #ff8080;
 }
 
+.card-text{
+   overflow: hidden!important;
+   text-overflow: ellipsis !important;
+}
+
 .img-custom {
    background-color: gray;
+   object-fit:cover !important;
+   border-radius: 25px !important;
 }

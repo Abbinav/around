@@ -9,7 +9,7 @@ const ItemCard = props => {
             <h5 className="card-title">{props.name}</h5>
             <p className="card-text">{props.desc}</p>
             <div className="card-bottom-custom">
-               <button className="inline-item card-button">Review</button>
+               <button type="button" className="btn btn-info">Review</button>
                <p className="inline-item">{props.date}</p>
             </div>
          </div>
