@@ -23,8 +23,15 @@ class Home extends React.Component{
     housingShow : false,
     electronicsShow : false,
     clothingShow : false,
-    entertainmentShow : false
+    entertainmentShow : false,
+    searchTerm: ""
   }
+  
+  searchBarHandler = (event) => {
+    const searchTerm = event.target.value;
+    this.setState({searchTerm});
+  }
+  
   dropdownHandler = (boolToChange) => {
     let curState = {
     transportationShow : false,
@@ -107,8 +114,8 @@ class Home extends React.Component{
          <h1 className= "title"> around <img src= "https://i.imgur.com/XAimBaG.png" className="logo_img" alt='around logo'></img> </h1>
     <div className="App">
       <form className="form-inline my-2 my-lg-0">
-        <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"></input>
-        <Link to="/results">
+        <input onChange={event => this.searchBarHandler(event)} className="form-control mr-sm-2 searchBar-custom" type="search" placeholder="Search" aria-label="Search"></input>
+        <Link to={"/results/" + this.state.searchTerm}>
         <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </Link>
       </form>
