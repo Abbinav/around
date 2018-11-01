@@ -55,49 +55,111 @@ class Home extends React.Component{
      let entertainmentDropdown= null;
      if(this.state.transportationShow){
        transportationDropdown = (
-        <div className = "flex-container fluid bg-warning">
-          <div>
-            <img src="https://i.imgur.com/nVM93E6.png" alt="bike logo" className="img-dropdown" ></img>
-            <figcaption className="transportation-collapsible">Bikes</figcaption>
-          </div>
-          <div>
-            <img src="https://i.imgur.com/G2vjNLK.png"  className= "img-dropdown" ></img>
-            <figcaption className="transportation-collapsible">Cars</figcaption>
-          </div>
-          <div>
-            <img src="https://i.imgur.com/E6sKyF0.png" className = "img-dropdown"></img>
-            <figcaption className="transportation-collapsible">Ride Sharing</figcaption>
-          </div>
+        <div className = "flex-container transportation-cat">
+          <Link to={"/results/bike"}>
+            <div className="d-inline-block">
+              <img src="https://i.imgur.com/cApAwDT.png" alt="bike logo" className="img-dropdown" ></img>
+              <figcaption className="transportation-collapsible">Bikes</figcaption>
+            </div>
+          </Link>
+          <Link to={"/results/car"}>
+            <div className="d-inline-block">
+              <img src="https://i.imgur.com/yU89DDU.png" alt = "car logo" className= "img-dropdown" ></img>
+              <figcaption className="transportation-collapsible">Cars</figcaption>
+            </div>
+          </Link>
+          <Link to={"/results/ride"}>
+            <div className="d-inline-block">
+              <img src="https://i.imgur.com/E6sKyF0.png" alt = "ride sharing logo" className = "img-dropdown"></img>
+              <figcaption className="transportation-collapsible">Ride Sharing</figcaption>
+            </div>
+          </Link>
         </div>
        );
      }
      
     if(this.state.booksShow){
         bookDropdown = (
-          <div className = "flex-container fluid bg-primary">
-            <img src= "https://i.imgur.com/cT2uSsC.jpg" className= "img-dropdown" alt="book logo" ></img>
+          <div className = "flex-container fluid bg-warning">
+            <Link to={"/results/textbook"}>
+              <div>
+                <img src = "https://i.imgur.com/OFigNM1.png" className = "img-dropdown" alt = "book logo"></img>
+                <figcaption className="transportation-collapsible">Textbooks</figcaption>
+              </div>
+            </Link>
+            <Link to={"/results/non-fiction"}>
+              <div>
+                <img src= "https://i.imgur.com/nBEydIW.png" className= "img-dropdown" alt="book logo" ></img>
+                <figcaption className="transportation-collapsible">Non-Fiction</figcaption>
+              </div>
+            </Link>
+            <Link to={"/results/fiction"}>
+              <div>
+                <img src = "https://i.imgur.com/9uD0JhX.png" className = "img-dropdown" alt = "book logo"></img>
+                <figcaption className="transportation-collapsible">Fiction</figcaption>
+              </div>
+            </Link>
           </div>
         );
     }
      
     if(this.state.housingShow){
         housingDropdown = (
-          <div className = "flex-container fluid bg-primary">
-            <img src= "https://i.imgur.com/cT2uSsC.jpg" className= "img-dropdown" alt="book logo" ></img>
+          
+          <div className = "flex-container fluid bg-info">
+          <div>
+            <img src= "https://i.imgur.com/Cm7jGVA.png" className= "img-dropdown" alt="house logo" ></img>
+            <figcaption className="transportation-collapsible">Fiction</figcaption>
+          </div>
+          <div>
+            <img src= "https://i.imgur.com/ub97zRT.png" className= "img-dropdown" alt="house logo" ></img>
+            <figcaption className="transportation-collapsible">Rooms</figcaption>
+
+          </div>
+          <div>
+            <img src= "https://i.imgur.com/FXKHuTP.png" className= "img-dropdown" alt="house logo" ></img>
+            <figcaption className="transportation-collapsible">Houses</figcaption>
+
+          </div>
+          
+          
           </div>
         );
     }
     if(this.state.electronicsShow){
         electronicsDropdown = (
           <div className = "flex-container fluid bg-primary">
-            <img src= "https://i.imgur.com/cT2uSsC.jpg" className= "img-dropdown" alt="book logo" ></img>
+            <div>
+            <img src= "https://i.imgur.com/0TEkVDN.png" className= "img-dropdown" alt="elec logo" ></img>
+            <figcaption className="transportation-collapsible">Tools</figcaption>
+            </div>
+            <div>
+            <img src= "https://i.imgur.com/5ZBNa6a.png" className= "img-dropdown" alt="elec logo" ></img>
+            <figcaption className="transportation-collapsible">Technology</figcaption>
+            </div>
+            <div>
+            <img src= "https://i.imgur.com/DtKOBxN.png" className= "img-dropdown" alt="elec logo" ></img>
+            <figcaption className="transportation-collapsible">Household</figcaption>
+            </div>
+            
           </div>
         );
     }
     if(this.state.clothingShow){
         clothingDropdown = (
-          <div className = "flex-container fluid bg-primary">
-            <img src= "https://i.imgur.com/cT2uSsC.jpg" className= "img-dropdown" alt="book logo" ></img>
+          <div className = "flex-container fluid clothing-cat">
+          <div>
+            <img src= "https://i.imgur.com/wdbyWep.png" className= "img-dropdown" alt="clothing logo" ></img>
+            <figcaption className="transportation-collapsible">Women</figcaption>
+          </div>
+          <div>
+            <img src= "https://i.imgur.com/jbHje6b.png" className= "img-dropdown" alt="clothing logo" ></img>
+            <figcaption className="transportation-collapsible">Men</figcaption>
+          </div>
+          <div>
+            <img src= "https://i.imgur.com/hmUP8ZU.png" className= "img-dropdown" alt="clothing logo" ></img>
+            <figcaption className="transportation-collapsible">Kids</figcaption>
+          </div>
           </div>
         );
     }
@@ -105,7 +167,10 @@ class Home extends React.Component{
     if(this.state.entertainmentShow){
         entertainmentDropdown = (
           <div className = "flex-container fluid bg-primary">
-            <img src= "https://i.imgur.com/cT2uSsC.jpg" className= "img-dropdown" alt="book logo" ></img>
+            <div>
+            <img src= "https://i.imgur.com/Ca0D3GD.png" className= "img-dropdown" alt="enter logo" ></img>
+            <figcaption className="transportation-collapsible">Tickets</figcaption>
+            </div>
           </div>
         );
     }

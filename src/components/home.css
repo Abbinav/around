@@ -4,6 +4,14 @@
   max-width: 250px;
 }
 
+.img-dropdown{
+    margin-left:15px !important;
+    margin-right:15px !important;
+    margin-top:15px !important;
+    display:flex;
+	  flex-direction:column;
+}
+
 .form-inline{
       padding-top: 20px;
       margin-left: 40%;
@@ -48,6 +56,7 @@
 
 .flex-container {
   display: inline-flex !important;
+  border-radius: 20px !important;
   margin-top: 20px;
 }
 
@@ -56,7 +65,18 @@
   visibility: collapse !important;
 }
 
-/*.transportation-collapsible{
-  background-color: #ffff00;
+.clothing logo {
+  
 }
-*/
+
+.transportation-cat{
+  background-color: #3EE0B7;
+}
+
+.clothing-cat{
+  background-color: #ffd9df	
+}
+/*.transportation-collapsible{*/
+/*  background-color: #ffff00 !important;*/
+/*}*/
+

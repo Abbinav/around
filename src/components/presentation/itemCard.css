@@ -1,17 +1,27 @@
 .card-custom {
-   width: 16rem;
-   margin: 10px auto;
-   display: inline-block;
+   width: 20rem;
+   margin-right: auto;
+   margin-left: auto;
+   margin-bottom: 4rem;
+   /*display: inline-block;*/
+   /*max-width: 400px !important;*/
+   	display: flex !important;
+      justify-content: flex-start;
    border-radius: 25px !important;
 }
 
+
+
 .card-bottom-custom {
-   display: inline-block;
+   display: flex;
+   position:relative;
+   
 }
 
 .inline-item {
    display: inline;
    margin: 5px; 
+   padding-left: 110px;
 }
 /* says the margin is invalid but it actually works, dont remove!!!*/
 .card-button {
@@ -24,7 +34,19 @@
 }
 
 .img-custom {
-   background-color: gray;
+   background-color: #FFFFCC;
    object-fit:cover !important;
-   border-radius: 25px !important;
+   border-top-left-radius: 25px !important;
+   border-top-right-radius: 25px !important;
+   width:318px;
+   height:318px;
+}
+
+.like-button{
+   width:30px;
+   height:30px;
+   position: absolute;
+    bottom:95px;
+    right: -10px;
+  
 }

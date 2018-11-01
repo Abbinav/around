@@ -4,6 +4,7 @@ import Home from "./home";
 import ResultScreen from "./results";
 import SignUp from "./signup";
 import Login from "./login";
+import ItemPage from "./ItemPage";
 
 export default () =>
   <Switch>
@@ -12,4 +13,5 @@ export default () =>
     <Route path="/results" component={ResultScreen} />
     <Route path = "/signup" component = {SignUp} />
     <Route path = "/login" component = {Login} />
+    <Route path = "/ItemPage" component = {ItemPage} />
   </Switch>;
