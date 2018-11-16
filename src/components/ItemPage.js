@@ -21,8 +21,10 @@ export default class Navbar extends React.Component{
                   <h3>Used, Grey Gameboy</h3>
                </div>
                <div className="row">
-               <button type="button" className="btn btn-danger btn-lg">Buy Now</button>
-               <img src="https://i.imgur.com/Zu9eIjj.png" alt = "like button" className = "like-button"></img>
+                  <button type="button" className="btn btn-danger btn-lg btn-shift">Buy Now</button>
+               </div>
+               <div className="row">
+                  <img src="https://i.imgur.com/Zu9eIjj.png" alt = "like button" className = "like-button"></img>
                </div>
                
             </div>

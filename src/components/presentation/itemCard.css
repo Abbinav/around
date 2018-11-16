@@ -10,6 +10,9 @@
    border-radius: 25px !important;
 }
 
+.react-card-front {
+   position : relative !important;
+}
 
 
 .card-bottom-custom {
@@ -21,11 +24,19 @@
 .inline-item {
    display: inline;
    margin: 5px; 
-   padding-left: 110px;
+   padding-left: 180px;
 }
 /* says the margin is invalid but it actually works, dont remove!!!*/
-.card-button {
-   background-color: #ff8080;
+.btn-info {
+   /*background-color: #ff8080;*/
+   opacity:0;
+   position: absolute;
+  
+  left:120px;
+  top: 180px;
+  text-align: center;
+  opacity: 0;
+  transition: opacity .35s ease;
 }
 
 .card-text{
@@ -41,12 +52,23 @@
    width:318px;
    height:318px;
 }
+.test{
+   position: relative;
+}
 
-.like-button{
+
+.test:hover .btn-info{
+   
+   opacity: 1;
+}
+
+
+
+.love-button{
    width:30px;
    height:30px;
    position: absolute;
     bottom:95px;
-    right: -10px;
+   right: -10px;
   
 }

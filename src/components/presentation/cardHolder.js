@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import ItemCard from './itemCard';
+import ItemCardClass from './itemCard';
 import './cardHolder.css'; 
 import Modal from './modal.js';
 
@@ -16,10 +16,11 @@ const CardHolder = props => {
    let itemCards = null;
    if(props.items.length > 0){
       itemCards = props.items.map(item => {
-            //console.log("ITEM = " + JSON.stringify(item));
-            return <ItemCard name={item.name} desc={item.description} views={0} date={item.date}
+            console.log("HERE");
+            return <ItemCardClass name={item.name} desc={item.description} views={0} date={item.date}
             photoURL={item.photoURL} price={item.price} loc={item.location} key={item.itemId}/>
          });
+         console.log("DONE HERE");
    }
 //{"items":[{"name":"Bike","description":"Blue new shiny bike","price":69.99,"photoURL":"https://www.apple.com/shop/buy-homepod/homepod/white","location":"Ventura,CA","itemId":1,"date":"2018-01-04"}]}
 
