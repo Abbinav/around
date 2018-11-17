@@ -14,6 +14,16 @@
    position : relative !important;
 }
 
+.react-card{
+      	display: flex !important;
+      	justify-content: flex-start !important;
+      	padding:10px;
+      	margin-right: auto;
+         margin-left: auto
+      	
+
+
+}
 
 .card-bottom-custom {
    display: flex;
@@ -24,7 +34,7 @@
 .inline-item {
    display: inline;
    margin: 5px; 
-   padding-left: 180px;
+   padding-left: 10px;
 }
 /* says the margin is invalid but it actually works, dont remove!!!*/
 .btn-info {
@@ -67,8 +77,9 @@
 .love-button{
    width:30px;
    height:30px;
-   position: absolute;
-    bottom:95px;
-   right: -10px;
+   position: relative;
+   float: right;
+   top:-40px;
+
   
 }

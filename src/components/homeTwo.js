@@ -1,6 +1,3 @@
-//
-//  THIS IS home.js BEFORE THE HOME-MADE COLLAPSIBLE WAS IMPLEMENTED
-//
 import React from 'react';
 import Collapsible from 'react-collapsible';
 import { Link } from 'react-router-dom';
@@ -9,6 +6,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'font-awesome/css/font-awesome.min.css';
 import './home.css';
 
+//import {transportationClickHandler} from './handlerFunctions/homeHandlers';
+//^did not work
 const bikeAddress = 'https://i.imgur.com/JZiBW2z.png';
 const bookAddress = 'https://i.imgur.com/qOq3DU2.png';
 const houseAddress = 'https://i.imgur.com/mfSjM30.png';
@@ -17,15 +16,184 @@ const clothingAddress = 'https://i.imgur.com/o8I9IHw.png';
 const entertainmentAddress = 'https://i.imgur.com/AnNzjzz.png';
 
 
-class HomeTwo extends React.Component{
+class Home extends React.Component{
+  state = {
+    transportationShow : false,
+    booksShow : false,
+    housingShow : false,
+    electronicsShow : false,
+    clothingShow : false,
+    entertainmentShow : false,
+    searchTerm: ""
+  }
+  
+  searchBarHandler = (event) => {
+    const searchTerm = event.target.value;
+    this.setState({searchTerm});
+  }
+  
+  dropdownHandler = (boolToChange) => {
+    let curState = {
+    transportationShow : false,
+    booksShow : false,
+    housingShow : false,
+    electronicsShow : false,
+    clothingShow : false,
+    entertainmentShow : false
+    };
+    curState[boolToChange] = !this.state[boolToChange];
+    this.setState(curState);
+  }
+  
+  
    render(){
+     let transportationDropdown = null;
+     let bookDropdown = null;
+     let housingDropdown = null;
+     let electronicsDropdown = null;
+     let clothingDropdown = null;
+     let entertainmentDropdown= null;
+     if(this.state.transportationShow){
+       transportationDropdown = (
+        <div className = "flex-container transportation-cat">
+          <Link to={"/results/bike"}>
+            <div className="d-inline-block">
+              <img src="https://i.imgur.com/cApAwDT.png" alt="bike logo" className="img-dropdown" ></img>
+              <figcaption className="transportation-collapsible">Bikes</figcaption>
+            </div>
+          </Link>
+          <Link to={"/results/car"}>
+            <div className="d-inline-block">
+              <img src="https://i.imgur.com/yU89DDU.png" alt = "car logo" className= "img-dropdown" ></img>
+              <figcaption className="transportation-collapsible">Cars</figcaption>
+            </div>
+          </Link>
+          <Link to={"/results/ride"}>
+            <div className="d-inline-block">
+              <img src="https://i.imgur.com/E6sKyF0.png" alt = "ride sharing logo" className = "img-dropdown"></img>
+              <figcaption className="transportation-collapsible">Ride Sharing</figcaption>
+            </div>
+          </Link>
+        </div>
+       );
+     }
+     
+    if(this.state.booksShow){
+        bookDropdown = (
+          <div className = "flex-container fluid bg-warning">
+            <Link to={"/results/textbook"}>
+              <div>
+                <img src = "https://i.imgur.com/OFigNM1.png" className = "img-dropdown" alt = "book logo"></img>
+                <figcaption className="transportation-collapsible">Textbooks</figcaption>
+              </div>
+            </Link>
+            <Link to={"/results/non-fiction"}>
+              <div>
+                <img src= "https://i.imgur.com/nBEydIW.png" className= "img-dropdown" alt="book logo" ></img>
+                <figcaption className="transportation-collapsible">Non-Fiction</figcaption>
+              </div>
+            </Link>
+            <Link to={"/results/fiction"}>
+              <div>
+                <img src = "https://i.imgur.com/9uD0JhX.png" className = "img-dropdown" alt = "book logo"></img>
+                <figcaption className="transportation-collapsible">Fiction</figcaption>
+              </div>
+            </Link>
+          </div>
+        );
+    }
+     
+    if(this.state.housingShow){
+        housingDropdown = (
+          
+          <div className = "flex-container fluid bg-info">
+            <Link to={"/results/house"}>
+              <div>
+                <img src= "https://i.imgur.com/Cm7jGVA.png" className= "img-dropdown" alt="house logo" ></img>
+                <figcaption className="transportation-collapsible">Fiction</figcaption>
+              </div>
+            </Link>
+            <Link to={"/results/room"}>
+              <div>
+                <img src= "https://i.imgur.com/ub97zRT.png" className= "img-dropdown" alt="house logo" ></img>
+                <figcaption className="transportation-collapsible">Rooms</figcaption>
+              </div>
+            </Link>
+            <Link to={"/results/transport"}>
+              <div>
+                <img src= "https://i.imgur.com/FXKHuTP.png" className= "img-dropdown" alt="house logo" ></img>
+                <figcaption className="transportation-collapsible">Houses</figcaption>
+              </div>
+            </Link>
+          </div>
+        );
+    }
+    if(this.state.electronicsShow){
+        electronicsDropdown = (
+          <div className = "flex-container fluid bg-primary">
+            <Link to={"/results/tool"}>
+              <div>
+                <img src= "https://i.imgur.com/0TEkVDN.png" className= "img-dropdown" alt="elec logo" ></img>
+                <figcaption className="transportation-collapsible">Tools</figcaption>
+              </div>
+            </Link>
+            <Link to={"/results/technology"}>
+              <div>
+                <img src= "https://i.imgur.com/5ZBNa6a.png" className= "img-dropdown" alt="elec logo" ></img>
+                <figcaption className="transportation-collapsible">Technology</figcaption>
+              </div>
+            </Link>
+            <Link to={"/results/household"}>
+              <div>
+                <img src= "https://i.imgur.com/DtKOBxN.png" className= "img-dropdown" alt="elec logo" ></img>
+                <figcaption className="transportation-collapsible">Household</figcaption>
+              </div>
+            </Link>
+          </div>
+        );
+    }
+    if(this.state.clothingShow){
+        clothingDropdown = (
+          <div className = "flex-container fluid clothing-cat">
+            <Link to={"/results/women"}>
+              <div>
+                <img src= "https://i.imgur.com/wdbyWep.png" className= "img-dropdown" alt="clothing logo" ></img>
+                <figcaption className="transportation-collapsible">Women</figcaption>
+              </div>
+            </Link>
+            <Link to={"/results/men"}>
+              <div>
+                <img src= "https://i.imgur.com/jbHje6b.png" className= "img-dropdown" alt="clothing logo" ></img>
+                <figcaption className="transportation-collapsible">Men</figcaption>
+              </div>
+            </Link>
+            <Link to={"/results/kids"}>
+              <div>
+                <img src= "https://i.imgur.com/hmUP8ZU.png" className= "img-dropdown" alt="clothing logo" ></img>
+                <figcaption className="transportation-collapsible">Kids</figcaption>
+              </div>
+            </Link>
+          </div>
+        );
+    }
+    
+    if(this.state.entertainmentShow){
+        entertainmentDropdown = (
+          <div className = "flex-container fluid bg-primary">
+            <div>
+            <img src= "https://i.imgur.com/Ca0D3GD.png" className= "img-dropdown" alt="enter logo" ></img>
+            <figcaption className="transportation-collapsible">Tickets</figcaption>
+            </div>
+          </div>
+        );
+    }
       return(
          <div>
          <h1 className= "title"> around <img src= "https://i.imgur.com/XAimBaG.png" className="logo_img" alt='around logo'></img> </h1>
     <div className="App">
       <form className="form-inline my-2 my-lg-0">
-        <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"></input>
-        <Link to="/results">
+        <input onChange={event => this.searchBarHandler(event)} className="form-control mr-sm-2 searchBar-custom" type="search" placeholder="Search" aria-label="Search"></input>
+        <Link to={"/results/" + this.state.searchTerm}>
         <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </Link>
       </form>
@@ -33,47 +201,61 @@ class HomeTwo extends React.Component{
       <div className="container-fluid">
         <div className="row">
           <div className="col-md-2">
-            <Collapsible trigger={<div> <img height="200px" src={bikeAddress}/> <figcaption>Transportation</figcaption>  </div>}>
-            
-                <div className = "flex-container fluid">
-                  <img src="https://i.imgur.com/nVM93E6.png" alt="bike logo" className="bike_img transportation-collapsible" ></img>
-                  <figcaption className="transportation-collapsible">Bikes</figcaption>
-                  <img src="https://i.imgur.com/G2vjNLK.png"  className= "car_img transportation-collapsible" ></img>
-                  <figcaption className="transportation-collapsible">Cars</figcaption>
-                  <img src="https://i.imgur.com/E6sKyF0.png" className = "ride_img transportation-collapsible"></img>
-                  <figcaption className="transportation-collapsible">Ride Sharing</figcaption>
-                </div>
-            </Collapsible>
-            
+            <div onClick={this.dropdownHandler.bind(this, "transportationShow")}> <img height="200px" src={bikeAddress}/> <figcaption>Transportation</figcaption>  </div>
           </div>
+          
           <div className="col-md-2">
-          <Collapsible trigger={<div> <img height="200px" src={bookAddress}/> <figcaption>Books</figcaption>  </div>}>
-            <img src= "https://i.imgur.com/G2vjNLK.png" className= "book_img"alt="book logo" ></img>
-            
-            </Collapsible>
+            <div onClick={this.dropdownHandler.bind(this, "booksShow")}> <img height="200px" src={bookAddress}/> <figcaption>Books</figcaption>  </div>
           </div>
+          
           <div className="col-md-2">
-            <img src= "https://i.imgur.com/mfSjM30.png" height = "200px" alt="house logo" className= "house_img"></img>
-            <figcaption>Housing</figcaption>
+            <div onClick={this.dropdownHandler.bind(this, "housingShow")}> <img height="200px" src={houseAddress}/> <figcaption>Housing</figcaption>  </div>
           </div>
+          
           <div className="col-md-2">
-            <img src= "https://i.imgur.com/GWhz6Ym.png" height = "200px" alt="phone logo" className= "electronic_img"></img>
-            <figcaption>Electronics</figcaption>
+            <div onClick={this.dropdownHandler.bind(this, "electronicsShow")}> <img height="200px" src={electronicAddress}/> <figcaption>Electronics</figcaption>  </div>
           </div>
+          
           <div className="col-md-2 ">
-            <img src= "https://i.imgur.com/o8I9IHw.png" height = "200px" alt="clothing logo" className= "clothing_img"></img>
-            <figcaption>Clothing</figcaption>
+            <div onClick={this.dropdownHandler.bind(this, "clothingShow")}> <img height="200px" src={clothingAddress}/> <figcaption>Clothing</figcaption>  </div>
           </div>
+          
           <div className="col-md-2">
-            <img src= "https://i.imgur.com/AnNzjzz.png" height = "200px" alt="movie ticket logo" className= "entertainment_img"></img>
-            <figcaption>Entertainment</figcaption>
+            <div onClick={this.dropdownHandler.bind(this, "entertainmentShow")}> <img height="200px" src={entertainmentAddress}/> <figcaption>Entertainment</figcaption>  </div>
+          </div>
+          
+        </div>
+      </div>
+      <div key="Beginning of dropdowns" className="row" >
+        <div className="col-sm">
+          <div className="transportationDropdownPosition" >
+            {transportationDropdown}
+          </div>
+          <div className="booksDropdownPosition" >
+            {bookDropdown}
           </div>
         </div>
-      </div> 
+        <div className="col-sm">
+          <div className="housingDropdownPosition" >
+            {housingDropdown}
+          </div>
+          <div className="electronicsDropdownPosition" >
+            {electronicsDropdown}
+          </div>
+        </div>
+        <div className="col-sm">
+          <div className="clothingDropdownPosition" >
+            {clothingDropdown}
+          </div>
+          <div className="entertainmentDropdownPosition" >
+            {entertainmentDropdown}
+          </div>
+        </div>
+      </div>
     </div> 
     </div>
       )
    }
 };
 
-export default HomeTwo;
+export default Home;
