@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import aws_exports from '../aws-exports';
 import $ from 'jquery'; 
 import 'font-awesome/css/font-awesome.min.css';
-import './navbar.css';
+// import './navbar.css';
 
 class NavbarTwo extends React.Component{
    render(){
@@ -37,10 +37,12 @@ class NavbarTwo extends React.Component{
         <a class="nav-link disabled" href="#">Disabled</a>
       </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"></input>
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
+    <form className="form-inline my-2 my-lg-0">
+        <input onChange={event => this.searchBarHandler(event)} className="form-control mr-sm-2 searchBar-custom" type="search" placeholder="Search" aria-label="Search"></input>
+        <Link to={"/results/" + this.state.searchTerm}>
+        <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </Link>
+      </form>
   </div>
 </nav>
       )

@@ -5,6 +5,7 @@ import aws_exports from '../aws-exports';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'font-awesome/css/font-awesome.min.css';
 import './home.css';
+import Navbar from './navbar/navbar';
 
 //import {transportationClickHandler} from './handlerFunctions/homeHandlers';
 //^did not work
@@ -17,6 +18,10 @@ const entertainmentAddress = 'https://i.imgur.com/AnNzjzz.png';
 
 
 class Home extends React.Component{
+  constructor(props){
+    super(props);
+    this.reloadPage = this.reloadPage.bind(this);
+  }
   state = {
     transportationShow : false,
     booksShow : false,
@@ -32,6 +37,10 @@ class Home extends React.Component{
     this.setState({searchTerm});
   }
   
+  reloadPage () {
+      return
+   }
+  
   dropdownHandler = (boolToChange) => {
     let curState = {
     transportationShow : false,
@@ -44,7 +53,7 @@ class Home extends React.Component{
     curState[boolToChange] = !this.state[boolToChange];
     this.setState(curState);
   }
-  
+  rel
   
    render(){
      let transportationDropdown = null;
@@ -107,10 +116,10 @@ class Home extends React.Component{
         housingDropdown = (
           
           <div className = "flex-container fluid bg-info">
-            <Link to={"/results/house"}>
+            <Link to={"/results/apartment"}>
               <div>
                 <img src= "https://i.imgur.com/Cm7jGVA.png" className= "img-dropdown" alt="house logo" ></img>
-                <figcaption className="transportation-collapsible">Fiction</figcaption>
+                <figcaption className="transportation-collapsible">Apartments</figcaption>
               </div>
             </Link>
             <Link to={"/results/room"}>
@@ -119,7 +128,7 @@ class Home extends React.Component{
                 <figcaption className="transportation-collapsible">Rooms</figcaption>
               </div>
             </Link>
-            <Link to={"/results/transport"}>
+            <Link to={"/results/house"}>
               <div>
                 <img src= "https://i.imgur.com/FXKHuTP.png" className= "img-dropdown" alt="house logo" ></img>
                 <figcaption className="transportation-collapsible">Houses</figcaption>
@@ -189,6 +198,7 @@ class Home extends React.Component{
     }
       return(
          <div>
+         <Navbar reload={this.reloadPage} />
          <h1 className= "title"> around <img src= "https://i.imgur.com/XAimBaG.png" className="logo_img" alt='around logo'></img> </h1>
     <div className="App">
       <form className="form-inline my-2 my-lg-0">

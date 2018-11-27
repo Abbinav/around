@@ -1,3 +1,40 @@
 .div{
    display: block !important
 }
+
+.list{
+   width: 150px;
+   margin-top: 4rem;
+   
+   
+}
+
+
+
+.list-group-item{
+   border:none;
+   padding-top: 0.75rem;
+   padding-right: 0.25rem;
+   padding-bottom: 0.25rem;
+   padding-left: 0.5rem;
+}
+
+a {
+   display: block;
+   padding-left:10px;
+}
+
+.input-group{
+   width: 20%;
+   height:20%;
+}
+
+
+
+
+.active {
+  font-weight: 600;
+  background-color: rgba(171, 0, 89, 0.1);
+  border-radius: 10px;
+  
+}

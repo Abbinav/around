@@ -5,6 +5,7 @@ import aws_exports from '../aws-exports';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'font-awesome/css/font-awesome.min.css';
 import './home.css';
+import Navbar from './navbar/navbar';
 
 //import {transportationClickHandler} from './handlerFunctions/homeHandlers';
 //^did not work
@@ -175,7 +176,9 @@ class Home extends React.Component{
         );
     }
       return(
+        
          <div>
+          <Navbar />
          <h1 className= "title"> around <img src= "https://i.imgur.com/XAimBaG.png" className="logo_img" alt='around logo'></img> </h1>
     <div className="App">
       <form className="form-inline my-2 my-lg-0">

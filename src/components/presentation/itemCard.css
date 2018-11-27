@@ -1,5 +1,5 @@
 .card-custom {
-   width: 20rem;
+   width: 250px;
    margin-right: auto;
    margin-left: auto;
    margin-bottom: 4rem;
@@ -10,16 +10,27 @@
    border-radius: 25px !important;
 }
 
+.card-holder{
+   padding-left: 5%;
+}
+
 .react-card-front {
    position : relative !important;
+}
+.card-body-front{
+ padding-left: 1rem !important;
+ padding-right: 1rem !important;
+ padding-top: 0rem !important;
+ padding-bottom: 0rem !important;
+ height: 50px
 }
 
 .react-card{
       	display: flex !important;
       	justify-content: flex-start !important;
       	padding:10px;
-      	margin-right: auto;
-         margin-left: auto
+      	margin-right: 60px;
+         
       	
 
 
@@ -28,7 +39,11 @@
 .card-bottom-custom {
    display: flex;
    position:relative;
-   
+      
+}
+
+.card-hide{
+   visibility: hidden !important;
 }
 
 .inline-item {
@@ -42,8 +57,8 @@
    opacity:0;
    position: absolute;
   
-  left:120px;
-  top: 180px;
+  left:37%;
+  top: 45%;
   text-align: center;
   opacity: 0;
   transition: opacity .35s ease;
@@ -59,13 +74,42 @@
    object-fit:cover !important;
    border-top-left-radius: 25px !important;
    border-top-right-radius: 25px !important;
-   width:318px;
-   height:318px;
+   width:250px;
+   
+}
+.carousel .slide.img{
+       width: 200px;
+    height: 250px;
+    vertical-align: top;
+    border: 0;
 }
 .test{
    position: relative;
 }
 
+.carousel-slider{
+   border-top-left-radius: 25px !important;
+   border-top-right-radius: 25px !important;
+}
+
+.carousel .slide{
+      background-color: #FFFFCC !important;
+
+}
+.selected{
+   background-color: #b3f2fb99
+}
+
+.carousel .thumb{
+   width: 60px !important;
+}
+
+.carousel .thumbs-wrapper{
+ margin-top: 20px !important;
+ margin-right: 0px !important;
+    margin-bottom: 0px !important;
+   margin-left: -10px !important;
+}
 
 .test:hover .btn-info{
    

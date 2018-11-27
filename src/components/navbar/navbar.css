@@ -5,3 +5,19 @@
 .navbar-custom {
    background-color: #ff8080 !important;
 }
+
+.navbar-spacer {
+   margin-right: 1%;
+   clear: both;
+}
+.navbar-bar {
+   float: left;
+}
+
+.navbar-search {
+   float: right;
+}
+
+.nav-hide{
+   visibility: hidden !important;
+}
